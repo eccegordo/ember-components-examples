@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ember Starter Kit</title>
+  <link rel="stylesheet" href="../_lib/bootstrap.css">
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+    {{#ember-tabs}}
+      {{#ember-pane title="Localization"}}
+        Foo bar baz
+      {{/ember-pane}}
+      {{#ember-pane title="Pluralization"}}
+        Biz bang boof
+      {{/ember-pane}}
+    {{/ember-tabs}}
+  </script>
+
+
+
+  <script type="text/x-handlebars" data-template-name="components/ember-tabs">
+    <div class="tabbable">
+      <ul class="nav nav-tabs">
+        {{#each panes}}
+          <li {{bindAttr class="isSelected:active"}}>
+            <a href="" {{action "select" this}}>{{title}}</a>
+         </li>
+        {{/each}}
+      </ul>
+      <div class="tab-content">
+        {{yield}}
+      </div>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="components/ember-pane">
+    {{yield}}
+  </script>
+
+  <script src="../_lib/jquery-1.9.1.js"></script>
+  <script src="../_lib/handlebars-1.0.0-rc.4.js"></script>
+  <script src="../_lib/ember-1.0.0-rc.6.1.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
