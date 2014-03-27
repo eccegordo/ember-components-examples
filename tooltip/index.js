@@ -5,7 +5,7 @@ App.EmberHintComponent = Ember.Component.extend({
     this.set('hovered', true);
   },
   mouseLeave: function(){
-    this.set('hovered', false)
+    this.set('hovered', false);
   }
 });
 
